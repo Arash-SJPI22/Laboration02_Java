@@ -1,4 +1,4 @@
-package org.example;
+package lernia.java;
 
 import org.junit.jupiter.api.Test;
 

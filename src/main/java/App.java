@@ -7,7 +7,6 @@ import java.util.Set;
 public class App {
     public static void main(String[] args) {
         ArrayList<Shape> shapeList = new ArrayList<>();
-        Set<Shape> shapeSet = new HashSet<>();
 
         shapeList.add(Shape.createCircle(4));
         shapeList.add(Shape.createRectangle(2.2, 2.5));
@@ -21,14 +20,11 @@ public class App {
         shapeList.sort(Shape::compareTo);
         System.out.println("\nPrinting sorted list of shapes from the ArrayList:");
         for (Shape s : shapeList) {
-            shapeSet.add(s);
             s.printArea();
         }
 
         System.out.println("\nPrinting shapes from the Set:");
-
-        for (Shape s : shapeSet) {
-            s.printArea();
-        }
+        Set<Shape> shapeSet = new HashSet<>(shapeList);
+        shapeSet.forEach(Shape::printArea);
     }
 }
